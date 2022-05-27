@@ -1,0 +1,32 @@
+---
+galaxy_info:
+  role_name: kubescape
+  author: darkwizard242
+  description: Installs/Uninstalls 'kubescape', open-source tool providing a multi-cloud K8s single pane of glass, including risk analysis, security compliance, RBAC visualizer and image vulnerabilities scanning.
+  company: none
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+        - focal
+        - bionic
+    - name: Debian
+      versions:
+        - bullseye
+        - buster
+        - stretch
+    - name: EL
+      versions:
+        - 8
+        - 7
+
+  galaxy_tags:
+    - kubescape
+    - security
+    - securityscanning
+    - vulnerability
+    - system
+    - os
