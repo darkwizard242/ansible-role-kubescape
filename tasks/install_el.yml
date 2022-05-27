@@ -1,0 +1,10 @@
+---
+# tasks file for kubescape - EL Family
+
+- name: EL Family | Downloading and setting up {{ kubescape_app }} {{ kubescape_version }}
+  ansible.builtin.get_url:
+    url: "{{ kubescape_dl_url }}"
+    dest: "{{ kubescape_bin_path }}"
+    owner: "{{ kubescape_file_owner }}"
+    group: "{{ kubescape_file_group }}"
+    mode: "{{ kubescape_file_mode }}"
