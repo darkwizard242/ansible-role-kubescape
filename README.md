@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 kubescape_app: kubescape
-kubescape_version: 3.0.23
+kubescape_version: 3.0.24
 kubescape_os: ubuntu
 kubescape_dl_url: https://github.com/armosec/{{ kubescape_app }}/releases/download/v{{ kubescape_version }}/{{ kubescape_app }}-{{ kubescape_os }}-latest
 kubescape_bin_path: "/usr/local/bin/{{ kubescape_app }}"
@@ -30,7 +30,7 @@ kubescape_file_mode: '0755'
 Variable                      | Description
 ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 kubescape_app                 | Defines the app to install i.e. **kubescape**
-kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **3.0.23**
+kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **3.0.24**
 kubescape_os                  | Defines os type. Used for obtaining the correct type of binaries. Defaults to: **ubuntu**
 kubescape_dl_url              | Defines URL to download the kubescape binary from.
 kubescape_bin_path            | Defined to dynamically set the appropriate path to store kubescape binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin/kubescape**
