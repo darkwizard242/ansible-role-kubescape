@@ -16,9 +16,15 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 kubescape_app: kubescape
-kubescape_version: 3.0.45
-kubescape_os: ubuntu
-kubescape_dl_url: https://github.com/armosec/{{ kubescape_app }}/releases/download/v{{ kubescape_version }}/{{ kubescape_app }}-{{ kubescape_os }}-latest
+kubescape_version: 3.0.48
+kubescape_os: "{{ ansible_system | lower }}"
+kubescape_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  aarch64: arm64
+  64-bit: amd64
+kubescape_dl_url: https://github.com/{{ kubescape_app }}/{{ kubescape_app }}/releases/download/v{{ kubescape_version }}/{{ kubescape_app }}_{{ kubescape_version }}_{{ kubescape_os }}_{{ kubescape_architecture_map[ansible_architecture] }}
 kubescape_bin_path: "/usr/local/bin/{{ kubescape_app }}"
 kubescape_file_owner: root
 kubescape_file_group: root
@@ -30,8 +36,9 @@ kubescape_file_mode: '0755'
 Variable                      | Description
 ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 kubescape_app                 | Defines the app to install i.e. **kubescape**
-kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **3.0.45**
-kubescape_os                  | Defines os type. Used for obtaining the correct type of binaries. Defaults to: **ubuntu**
+kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **3.0.48**
+kubescape_os                  | Defines os type. Used for obtaining the correct type of binaries based on OS type.
+kubescape_architecture_map    | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture.
 kubescape_dl_url              | Defines URL to download the kubescape binary from.
 kubescape_bin_path            | Defined to dynamically set the appropriate path to store kubescape binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin/kubescape**
 kubescape_bin_permission_mode | Defines the permission mode level for the file.
