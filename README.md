@@ -17,8 +17,14 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 kubescape_app: kubescape
 kubescape_version: 3.0.48
-kubescape_os: ubuntu
-kubescape_dl_url: https://github.com/armosec/{{ kubescape_app }}/releases/download/v{{ kubescape_version }}/{{ kubescape_app }}-{{ kubescape_os }}-latest
+kubescape_os: "{{ ansible_system | lower }}"
+kubescape_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  aarch64: arm64
+  64-bit: amd64
+kubescape_dl_url: https://github.com/{{ kubescape_app }}/{{ kubescape_app }}/releases/download/v{{ kubescape_version }}/{{ kubescape_app }}_{{ kubescape_version }}_{{ kubescape_os }}_{{ kubescape_architecture_map[ansible_architecture] }}
 kubescape_bin_path: "/usr/local/bin/{{ kubescape_app }}"
 kubescape_file_owner: root
 kubescape_file_group: root
