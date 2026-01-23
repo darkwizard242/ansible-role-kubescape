@@ -37,7 +37,8 @@ Variable                      | Description
 ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 kubescape_app                 | Defines the app to install i.e. **kubescape**
 kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **3.0.48**
-kubescape_os                  | Defines os type. Used for obtaining the correct type of binaries. Defaults to: **ubuntu**
+kubescape_os                  | Defines os type. Used for obtaining the correct type of binaries based on OS type.
+kubescape_architecture_map    | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture.
 kubescape_dl_url              | Defines URL to download the kubescape binary from.
 kubescape_bin_path            | Defined to dynamically set the appropriate path to store kubescape binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin/kubescape**
 kubescape_bin_permission_mode | Defines the permission mode level for the file.
