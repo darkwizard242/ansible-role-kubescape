@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 kubescape_app: kubescape
-kubescape_version: 4.0.1
+kubescape_version: 4.0
 kubescape_os: "{{ ansible_system | lower }}"
 kubescape_architecture_map:
   amd64: amd64
@@ -36,7 +36,7 @@ kubescape_file_mode: '0755'
 Variable                      | Description
 ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 kubescape_app                 | Defines the app to install i.e. **kubescape**
-kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **4.0.1**
+kubescape_version             | Defined to dynamically fetch the desired version to install. Defaults to: **4.0.2**
 kubescape_os                  | Defines os type. Used for obtaining the correct type of binaries based on OS type.
 kubescape_architecture_map    | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture.
 kubescape_dl_url              | Defines URL to download the kubescape binary from.
