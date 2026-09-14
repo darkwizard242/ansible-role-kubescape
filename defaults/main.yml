@@ -2,7 +2,7 @@
 # defaults file for kubescape
 
 kubescape_app: kubescape
-kubescape_version: 4.0.13
+kubescape_version: 4.0.14
 kubescape_os: "{{ ansible_system | lower }}"
 kubescape_architecture_map:
   amd64: amd64
